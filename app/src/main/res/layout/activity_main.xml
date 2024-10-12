@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="MainActivity">
+
+    <!-- Declare a <data> block with a <variable> in xml file to hold the viewmodel -->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.raymond_2340_demo.viewmodel.MainViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Hello World message at the top -->
+        <TextView
+            android:id="@+id/text_hello_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.greetingMessage}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Button that updates the message (Update Message button) -->
+        <Button
+            android:id="@+id/button_update_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Message"
+            android:onClick="@{() -> viewModel.updateMessage()}"
+            app:layout_constraintTop_toBottomOf="@id/text_hello_world"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Counter value below the Update Message button -->
+        <TextView
+            android:id="@+id/text_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.counter)}"
+            app:layout_constraintTop_toBottomOf="@id/button_update_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Increment counter button -->
+        <Button
+            android:id="@+id/button_increment_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Increment Counter"
+            android:onClick="@{() -> viewModel.incrementCounter()}"
+            app:layout_constraintTop_toBottomOf="@id/text_counter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Button that navigates to second activity -->
+        <Button
+            android:id="@+id/button_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open Activity"
+            app:layout_constraintTop_toBottomOf="@id/button_increment_counter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/button_countergraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Create Graph"
+            app:layout_constraintTop_toBottomOf="@id/button_open"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="273dp"
+            android:layout_height="362dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_countergraph" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

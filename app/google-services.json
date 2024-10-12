@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "143329110458",
+    "project_id": "raymond-2340-demo",
+    "storage_bucket": "raymond-2340-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143329110458:android:31c2cee87dae8e0e619583",
+        "android_client_info": {
+          "package_name": "com.example.raymond_2340_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3wGZkGgRSRRKa_0E-ZzrBtIcBoTzAGUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
